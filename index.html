@@ -159,15 +159,7 @@ const distribuidasDiv = document.getElementById("distribuidas");
 
 
 const almacenesDestino = [
-  "Almacen_Dulces",
-  "Almacen_Liquidos",
-  "Almacen_Ruta_1",
-  "Almacen_Ruta_2",
-  "almacen_cigarro",
-  "almacen_zapata",
-  "almacenabarrotepdd",
-  "Almacen_B41",
-  "Almacen_Matriz"
+  "almacen_zapata"
 ];
 
 // Limpia la descripción para que pueda usarse como ID válido
@@ -310,14 +302,14 @@ const coincideProv =
     <b>UUID:</b> ${data.uuid_cfdi || docSnap.id}
   </div>
   <div class="conceptos">Cargando conceptos...</div>
-  <div class="selector" style="display:none;">
-    <select>
-      <option value="">Seleccionar destino...</option>
-      ${almacenesDestino.map(a => `<option value="${a}">${a}</option>`).join("")}
-<option value="Gastos">Gastos</option>
-    </select>
-    <button>Enviar</button>
-  </div>
+<div class="selector" style="display:none;">
+  <select>
+    <option value="">Seleccionar destino...</option>
+    <option value="almacen_zapata" selected>almacen_zapata</option>
+    <option value="Gastos">Gastos</option>
+  </select>
+  <button>Enviar</button>
+</div>
 `;
 
     // === ABRIR TARJETA ===

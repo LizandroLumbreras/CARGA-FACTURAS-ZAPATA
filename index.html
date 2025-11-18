@@ -694,13 +694,14 @@ if (destino === "Gastos") {
   for (const c of conceptos) {
     const vinculo = await obtenerVinculo(c.descripcion);
     if (vinculo) {
-      conceptosEnlazados.push({
-        ...c,
-        productoId: vinculo.productoId,
-        productoInterno: vinculo.concepto,
-        conversion: vinculo.conversion,
-        cantidadTotal: vinculo.cantidadTotal
-      });
+conceptosEnlazados.push({
+  ...c,
+  productoId: vinculo.productoId,
+  codigo: String(vinculo.productoId).toLowerCase(),  // ← NUEVO CAMPO
+  productoInterno: vinculo.concepto,
+  conversion: vinculo.conversion,
+  cantidadTotal: vinculo.cantidadTotal
+});
     } else {
       conceptosEnlazados.push(c); // sin vínculo
     }

@@ -239,7 +239,7 @@ async function cargarProveedores() {
   snap.forEach(doc => {
     const data = doc.data();
     const rfc = (data.rfc_emisor || "").trim();
-    const nombre = (data.razon_social_emisor || "").trim();
+    const nombre = (data.nombre_emisor || data.razon_social_emisor || "").trim();
 
     // Solo agregar si el RFC está en la lista permitida
     if (rfcPermitidos.includes(rfc)) {
@@ -297,7 +297,7 @@ const coincideProv =
     const card = document.createElement("div");
     card.className = "tarjeta";
     card.innerHTML = `
-  <h3>${data.razon_social_emisor || "Sin proveedor"}</h3>
+ <h3>${data.nombre_emisor || data.razon_social_emisor || data.proveedor || "Sin proveedor"}</h3>
   <div class="detalle">
     <b>Fecha:</b> ${data.fecha || "N/A"}<br>
     <b>Total:</b> $${(data.total ? data.total.toFixed(2) : "0.00")}<br>

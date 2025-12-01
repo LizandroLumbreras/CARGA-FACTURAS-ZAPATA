@@ -228,6 +228,8 @@ async function cargarProveedores() {
     "JGCS960829TL1",
     "CUCJ8503144V1",
     "CGO930212IC6",
+    "PPC0311111KA",
+    "TUR090609BN9",
     "GEL810115VD6"
   ];
 
@@ -275,18 +277,19 @@ const docsOrdenados = snap.docs.sort((a, b) => {
   for (const docSnap of docsOrdenados) {
     const data = docSnap.data();
     const rfcPermitidos = [
-  "RIR061003M2A",
-  "BTA010327AD3",
-  "AJE010718ET5",
-  "LGU240724439",
-  "PVA890908HS0",
-  "GCO0303128G0",
-  "JGCS960829TL1",
-  "CUCJ8503144V1",
-  "CGO930212IC6",
-  "GEL810115VD6"
-];
-
+    "RIR061003M2A",
+    "BTA010327AD3",
+    "AJE010718ET5",
+    "LGU240724439",
+    "PVA890908HS0",
+    "GCO0303128G0",
+    "JGCS960829TL1",
+    "CUCJ8503144V1",
+    "CGO930212IC6",
+    "PPC0311111KA",
+    "TUR090609BN9",
+    "GEL810115VD6"
+  ];
 const coincideProv =
   (!filtroProv || data.razon_social_emisor === filtroProv) &&
   rfcPermitidos.includes(data.rfc_emisor);
